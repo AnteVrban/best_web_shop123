@@ -1,0 +1,97 @@
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-shop mobiteli</title>
+    <!-- link rel="stylesheet" href="../css/stil.css" -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+    <title>
+        Registracija
+    </title>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        
+        }
+       *{box-sizing: border-box;
+
+        }
+        input[type=text],input[type=email],input[type=password]{
+            width: 100%;
+            height: 5px;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            outline: none;
+            background: whitesmoke;
+        }
+        input[type=text]:focus, input[type=email]:focus, input[type=password]:focus{
+            background-color: #ddd;
+            outline: none;
+
+        }
+        .gumbreg{
+            background-color: rgba(255, 8, 0, 0.807);
+            color: black;
+            padding: 16px 20px;
+            margin: 8px;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+        .gumbreg:hover{
+            opacity:1;
+        }
+        a{
+            color: blue;
+        }
+        .prijava{
+            background: whitesmoke;
+            text-align: center;
+        }
+
+</style>
+</head>
+<body>
+    <div class="w3-container">
+        <nav class="navigacija">
+            <div class="w3-bar w3-black">
+                <a href="index.html" class="w3-bar-item w3-button">Početna stranica</a>
+                <a href="sve_ponude.html" class="w3-bar-item w3-button">Sve ponude</a>
+                <a href="kontakt.html" class="w3-bar-item w3-button">Kontakt</a>
+                <!--a href="registracija.html" class="w3-bar-item w3-button">Registracija</a -->
+            </div>          
+        </nav>
+    </div>
+    <form>
+        <h1>
+            Registracija
+        </h1>
+            <p>
+                Molimo Vas unesite podatke za registraciju
+            </p>
+            <hr />
+            <label >Ime</label>
+            <input type="text" placeholder="Ime" id="registracija_ime">
+            <br/>
+            <label>Email</label>
+            <input type="email" placeholder="Email" id="registracija_mail">
+            <br/>
+            <label >Šifra</label>
+            <input type="password" placeholder="Šifra" id="registracija_sifra">
+            <br>
+            <label >Ponovno unesite šifru</label>
+            <input type="password" placeholder="Ponovno unesite šifru">
+            <p>Kreiranjem računa slažete se s našom <a href="#">Policom privatnosti i sigurnosti</a></p>
+            <button class="gumbreg">Registracija</button>
+        </div>
+            <div class="prijava">
+            <p>Već imate račun? <a href="#">Prijava</a></p>
+    </form>
+</div>
+</body>
+
+
+</html>
