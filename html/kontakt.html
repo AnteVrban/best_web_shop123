@@ -14,9 +14,20 @@
         function posalji(){
             //alert("Poziva se funkcija");
             let email = document.getElementById("email").value;
-            alert(email);
+            alert("Pišete s maila: "+email);
             let poruka = document.getElementById("poruka").value;
             document.getElementById("korisnik_unos").innerHTML="Korisnik "+email+" je rekao: "+poruka; 
+            const httpRequest = new XMLHttpRequest();
+            httpRequest.onreadystatechange = function(){
+                if (httpRequest.readyState ==4) {
+                    document.getElementById("korisnik_unos").innerHTML=httpRequest.responseText;
+
+                }
+
+            }
+            httpRequest.open("GET","../php/obrada.php?email="+email+"&poruka="+poruka);
+            httpRequest.send();
+
         }
     </script>
 </head>
