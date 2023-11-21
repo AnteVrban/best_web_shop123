@@ -23,6 +23,19 @@
     <div class="w3-container">
     <h1>Web shop - mobiteli</h1>    
     <p></p>
+    <?php
+            $server = "localhost";
+            $database ="pzi";
+            $username="root";
+            $password ="";
+            $conn = mysqli_connect($server,$username,$password,$database);
+            $query = "SELECT * FROM mobiteli";
+            $res = mysqli_query($conn, $query);
+
+
+
+
+        ?>
     <div>Popis svih mobitela:
         <table class="w3-table-all">
             <tr class="w3-red">
@@ -33,44 +46,22 @@
                 <th>Slika</th>
                 <th>Cijena</th>
             </tr>
-            <tr>
-                <td>1.</td>
-                <td>Galaxy Z Flip5</td>
-                <td>Samsung</td>
-                <td>
-                    Brzina procesora: 3.36GHz, 2.8GHz, 2GHz<br>
-                    Vrsta procesora: Osmojezgreni<br>
-                    Veličina (glavni zaslon): 170.3mm / 166.4mm<br>
-                    Rezolucija (glavni zaslon): 2640 x 1080 (FHD+)<br>
-                    <a 
-                        href="https://www.samsung.com/hr/smartphones/galaxy-z-flip5/" 
-                        target="_blank">Više o uređaju...
-                    </a>
-                </td>
-                <td>
-                    <img src="../images/galaxyflip5.webp" 
-                    width="100px" alt="Galaxy Z Flip5"></td>
-                <td>611.45</td>
-            </tr>
-            <tr>
-                <td>2.</td>
-                <td>Galaxy S23 Ultra</td>
-                <td>Samsung</td>
-                <td>
-                    Rezolucija (glavni zaslon):	3088 x 1440 (Quad HD+) <br>
-                    Tehnologija (glavni zaslon):	Dynamic AMOLED 2X <br>
-                    Glavna kamera - rezolucija:	200.0 MP + 10.0 MP + 12.0 MP + 10.0 MP <br>
-                    Glavna kamera - F broj:	F1.7 , F4.9 , F2.2 , F2.4 <br>
-                    <a 
-                        href="https://www.samsung.com/hr/smartphones/galaxy-s23/buy/" 
-                        target="_blank">Više o uređaju...
-                    </a>
-                </td>
-                <td>
-                    <img src="../images/galaxys23.avif" 
-                    width="100px" alt="Galaxy S23 Ultra"></td>
-                <td>611.45</td>
-            </tr>
+    <?php
+while($row = mysqli_fetch_array($res)){
+                echo" <tr>";
+              echo  "<td>".$row['id']."</td>";
+              echo "<td>".$row['naziv']."</td>";
+                echo"<td>".$row['proizvodac']."</td>";
+                echo"<td>".$row['opis']."</td>";
+                echo"<td><img src='".$row['slika']."'width='100px' alt='".$row['naziv']."'</td>";
+                echo"<td>".$row['cijena']."</td>";
+                echo"</tr>";}
+mysqli_close($conn);
+    ?>
+
+
+            
+           
             <tr>
                 <td>3.</td>
                 <td>XIAOMI 12 PRO</td>
